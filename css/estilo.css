@@ -1,1 +1,14 @@
-body{background-color: rgb(58, 212, 223);}
+*{margin: 0; padding: 0; box-sizing: border-box; outline: none;}
+.principal{
+    display: grid;
+    grid-template-columns: 75% 25%; /* Estou informando que deve ter duas colunas (dois valores)*/
+    grid-template-areas: 'cabecalho formulario'
+                         'principal formulario'
+                         'rodape formulario' ;
+    height: 100vh; /* View Port Height = 100vh todo o dipositivo*/
+}
+
+header{background-color: rgb(25, 9, 245); grid-area: cabecalho;}
+main{background-color: red; grid-area: principal;}
+aside{background-color: rgb(16, 250, 94); grid-area: formulario;}
+footer{background-color: rgb(243, 247, 14); rodape;}
