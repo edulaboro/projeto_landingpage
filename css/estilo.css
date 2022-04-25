@@ -6,9 +6,18 @@
                          'principal formulario'
                          'rodape formulario' ;
     height: 100vh; /* View Port Height = 100vh todo o dipositivo*/
+    font-family: Arial;
+    
 }
 
-header{background-color: rgb(25, 9, 245); grid-area: cabecalho;}
-main{background-color: red; grid-area: principal;}
-aside{background-color: rgb(16, 250, 94); grid-area: formulario;}
-footer{background-color: rgb(243, 247, 14); rodape;}
+/*CABEÇALHO*/
+header{grid-area: cabecalho;}
+.logo{display: flex; align-items: center; padding: 10px 30px;}
+.logo img{width: 80px;} /* tamanho da logo no cabeçalho */
+
+/*PRINCIPAL*/
+main{ grid-area: principal;}
+/*FORMULARIO*/
+aside{grid-area: formulario;}
+/*RODAPÉ*/
+footer{grid-area: rodape;}
