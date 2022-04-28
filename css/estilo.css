@@ -22,7 +22,9 @@ main figure{width: 200px; margin-right: 20%;}
 main h1{font-size: 40px; width: 70%; margin-bottom: 30px; line-height: 1.5cm; color: white;}
 main h3{width: 80%; color: white;}
 /*FORMULARIO*/
-aside{grid-area: formulario;}
+aside{grid-area: formulario; background-color: #274083; padding-top: 30px; text-align: center; color: white;}
+aside form{width: 90%; padding-top: 30px; margin: 0 auto; display: flex; flex-direction: column;}
+aside input, select{width: 100%; padding: 15px; font-size: 16px; margin-bottom: 10px; border: none;}
 /*RODAPÉ*/
 footer{grid-area: rodape; background: #ccc; color: #274083; padding: 30px; display: flex;}
 footer section{margin: 0 20px;}
