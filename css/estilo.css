@@ -1,32 +1,52 @@
-*{margin: 0; padding: 0; box-sizing: border-box; outline: none;}
+*{margin:0; padding:0; box-sizing: border-box; outline:none;}
+
 .principal{
-    display: grid;
-    grid-template-columns: 75% 25%; /* Estou informando que deve ter duas colunas (dois valores)*/
+    display:grid;
+    grid-template-columns: 75% 25%;/* Estou informando que quero 2 colunas*/
     grid-template-areas: 'cabecalho formulario'
-                         'principal formulario'
-                         'rodape formulario' ;
-    height: 100vh; /* View Port Height = 100vh todo o dipositivo*/
-    font-family: 'Franklin Gothic Medium';
-    
+                          'principal formulario'
+                          'rodape formulario';
+    height:100vh;
+    font-family:arial;
+    color:#fff;
 }
 
-/*CABEÇALHO*/
-header{grid-area: cabecalho;}
-.logo{display: flex; align-items: center; padding: 10px 30px;}
-.logo img{width: 80px;} /* tamanho da logo no cabeçalho */
+/* CABEÇALHO */
+header{grid-area:cabecalho;}
+.logo{display:flex; align-items: center; padding:10px 30px;}
+.logo img{width:80px;}
+.logo h1{font-family:verdana; color:#274083;}
 
-/*PRINCIPAL*/
-main{ grid-area: principal; background: linear-gradient(to right, #48a0df, #274083); display:flex; align-items: center; padding: 2% 0 2% 50px; line-height: 1cm;}
-main figure img{width: 100%;} /* Definindo o espaço da figura dentro do quadro cabeçalho */
-main figure{width: 200px; margin-right: 20%;}
-main h1{font-size: 40px; width: 70%; margin-bottom: 30px; line-height: 1.5cm; color: white;}
-main h3{width: 80%; color: white;}
-/*FORMULARIO*/
-aside{grid-area: formulario; background-color: #274083; padding-top: 30px; text-align: center; color: white;}
-aside form{width: 90%; padding-top: 30px; margin: 0 auto; display: flex; flex-direction: column;}
-aside input, select{width: 100%; padding: 15px; font-size: 16px; margin-bottom: 10px; border: none;}
-/*RODAPÉ*/
-footer{grid-area: rodape; background: #ccc; color: #274083; padding: 30px; display: flex;}
-footer section{margin: 0 20px;}
-footer .rodape-titulo{margin-bottom: 20px;}
-footer .rodape-conteudo{line-height: 0.7cm;}
+/* PRINCIPAL */
+main{grid-area:principal; background:linear-gradient(to right, #48a0df, #274083); display:flex; align-items: center; padding:2% 0 2% 50px; line-height: 1cm;}
+main figure img{width:100%;}
+main figure{width:200px; margin-right:20%;}
+main h1{font-size:40px; width:70%; margin-bottom:30px; line-height: 1.5cm;}
+main h3{width:80%;}
+/*FORMULÁRIO */
+aside{grid-area:formulario; background-color: #274083; padding-top:30px; text-align:center;}
+aside form{width:90%; padding-top:30px; margin:0 auto; display:flex; flex-direction: column; row-gap:30px;}
+
+aside input, select{width:100%; padding:15px; font-size:16px; margin-bottom:10px; border:none;}
+aside input[type=submit]{background-color: #11dd2c; font-weight:bold; padding: 20px 0; cursor:pointer; transition:all 0.2s linear;}
+ 
+/*EFEITOS*/
+form :where(input,select):focus{outline:3px solid #48a0df;}
+form input[type=submit]:hover{box-shadow: 0 0 20px #fff; transition:all 0.2s linear;}
+/*RODAPÉ */
+footer{grid-area:rodape; background-color: #ccc; color:#274083; padding:30px; display:flex;}
+footer section{margin:0 20px;}
+footer .rodape-titulo{margin-bottom:20px;}
+footer .rodape-conteudo{line-height:0.7cm;}
+
+/*RESPONSIVIDADE*/
+@media screen and (max-width:1200px){
+    .principal{
+        grid-template-columns: 100%;
+        grid-template-areas:
+        'cabecalho'
+        'principal'
+        'rodape'
+        'formulario';
+    }
+}
